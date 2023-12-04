@@ -55,6 +55,93 @@ button, input, select, textarea {
   font: inherit;
 }
 
-/*
+/**
  * Section
  */
+.header__inner {
+  width: min(100%, 75rem);
+  margin: auto;
+  padding: 0 clamp(0.75rem, 2%, 1.5rem);
+}
+
+/**
+ * Header
+ */
+.header {
+  padding: 0.75rem 0;
+}
+.header__inner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__sitebrand {
+  width: 12rem;
+  margin: 0;
+}
+.header__nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 54rem;
+  margin: 0;
+}
+.header__primaryMenu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header__primaryMenuItem {
+  font-weight: 700;
+}
+.header__primaryMenuItem a {
+  color: #333333;
+}
+.header__primaryMenuItem a:hover {
+  color: #666666;
+}
+.header__tel {
+  width: 15rem;
+}
+
+/**
+ * Main Visual
+ */
+.mainVisual {
+  width: min(100%, 63rem);
+  margin: 2.25rem auto;
+}
+
+/**
+ * Floating Area
+ */
+.floatingArea {
+  position: sticky;
+  top: calc(100% - 6.75rem);
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.floatingArea__banners {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.floatingArea__banner:nth-child(1) {
+  width: 17rem;
+}
+.floatingArea__banner:nth-child(2), .floatingArea__banner:nth-child(3) {
+  width: 15rem;
+}
