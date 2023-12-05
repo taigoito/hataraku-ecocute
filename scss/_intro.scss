@@ -2,11 +2,13 @@
  * Intro
  */
 
+$bgHeight: min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
+
 .intro {
   margin-top: -6.75rem;
 
   &__head {
-    height: 22.5rem;
+    height: $bgHeight;
     padding-top: 6.75rem;
     background: url(./assets/flame00.jpg) no-repeat 50% 50% / cover scroll;
   }
@@ -17,7 +19,7 @@
   }
 
   &__body {
-    background-color: #fa8113;
+    background-color: $primary;
   }
 
   &__container {
@@ -37,7 +39,7 @@
   }
 
   &__featureIcon {
-    flex: 0 1 14.4rem;
+    flex: 0 1 33.33%;
   }
 
   &__textContent {
@@ -55,7 +57,7 @@
   }
 
   &__foot {
-    height: 22.5rem;
+    height: $bgHeight;
     background: url(./assets/flame01.jpg) no-repeat 50% 50% / cover scroll;
   }
 }

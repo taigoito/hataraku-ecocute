@@ -13,18 +13,22 @@
     align-items: center;
   }
 
-  &__sitebrand {
+  &__siteBrand {
     width: 12rem;
     margin: 0;
   }
 
   &__nav {
-    display: flex;
+    display: none;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     width: 54rem;
     margin: 0;
+
+    @media (min-width: $breakpointLg) {
+      display: flex;
+    }
   }
 
   &__primaryMenu {
