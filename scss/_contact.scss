@@ -1,0 +1,14 @@
+/**
+ * Contact
+ */
+
+.contact {
+  &__inner {
+    @extend %__inner;
+  }
+
+  &__heading {
+    width: min(100%, 54rem);
+    margin: 0 auto;
+  }
+}

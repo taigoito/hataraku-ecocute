@@ -2,13 +2,13 @@
  * Intro
  */
 
-$bgHeight: min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
+$introBgHeight:  min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
 
 .intro {
   margin-top: -6.75rem;
 
   &__head {
-    height: $bgHeight;
+    height: $introBgHeight;
     padding-top: 6.75rem;
     background: url(./assets/flame00.jpg) no-repeat 50% 50% / cover scroll;
   }
@@ -57,7 +57,7 @@ $bgHeight: min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
   }
 
   &__foot {
-    height: $bgHeight;
+    height: $introBgHeight;
     background: url(./assets/flame01.jpg) no-repeat 50% 50% / cover scroll;
   }
 }
