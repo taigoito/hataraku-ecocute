@@ -1,0 +1,27 @@
+/**
+ * Products
+ */
+
+.products {
+  background-color: #fff9ce;
+
+  &__items {
+    @extend %__inner;
+    position: relative;
+    top: -6.75rem;
+    z-index: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__item {
+    flex: 0 0 33.33%;
+    padding: 0.75rem;
+
+    img {
+      border-radius: 6px;
+      box-shadow: 0 0 12px 4px rgba(#fa8113, 0.15);
+    }
+  }
+}

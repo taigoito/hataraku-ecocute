@@ -1,0 +1,61 @@
+/**
+ * Intro
+ */
+
+.intro {
+  margin-top: -6.75rem;
+
+  &__head {
+    height: 22.5rem;
+    padding-top: 6.75rem;
+    background: url(./assets/flame00.jpg) no-repeat 50% 50% / cover scroll;
+  }
+
+  &__heading {
+    width: min(100%, 54rem);
+    margin: 0 auto;
+  }
+
+  &__body {
+    background-color: #fa8113;
+  }
+
+  &__container {
+    @extend %__inner;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__featureIcons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 43.2rem;
+  }
+
+  &__featureIcon {
+    flex: 0 1 14.4rem;
+  }
+
+  &__textContent {
+    flex: 1 1 28.8rem;
+    color: $bodyBg;
+  }
+
+  &__textContentBox {
+    width: min(100%, 43.2rem);
+    margin: 0 auto;
+  }
+
+  &__lead {
+    font-size: 2rem;
+  }
+
+  &__foot {
+    height: 22.5rem;
+    background: url(./assets/flame01.jpg) no-repeat 50% 50% / cover scroll;
+  }
+}

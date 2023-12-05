@@ -10,11 +10,16 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 @media (max-width: 599.9px) {
   html {
     font-size: 3.84vw;
   }
+}
+
+:target {
+  scroll-margin-top: 6.75rem;
 }
 
 body {
@@ -58,7 +63,7 @@ button, input, select, textarea {
 /**
  * Section
  */
-.header__inner {
+.products__items, .intro__container, .header__inner {
   width: min(100%, 75rem);
   margin: auto;
   padding: 0 clamp(0.75rem, 2%, 1.5rem);
@@ -127,6 +132,7 @@ button, input, select, textarea {
   top: calc(100% - 6.75rem);
   left: 0;
   right: 0;
+  z-index: 900;
   margin: auto;
 }
 .floatingArea__banners {
@@ -144,4 +150,77 @@ button, input, select, textarea {
 }
 .floatingArea__banner:nth-child(2), .floatingArea__banner:nth-child(3) {
   width: 15rem;
+}
+
+/**
+ * Intro
+ */
+.intro {
+  margin-top: -6.75rem;
+}
+.intro__head {
+  height: 22.5rem;
+  padding-top: 6.75rem;
+  background: url(./assets/flame00.jpg) no-repeat 50% 50%/cover scroll;
+}
+.intro__heading {
+  width: min(100%, 54rem);
+  margin: 0 auto;
+}
+.intro__body {
+  background-color: #fa8113;
+}
+.intro__container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.intro__featureIcons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 43.2rem;
+}
+.intro__featureIcon {
+  flex: 0 1 14.4rem;
+}
+.intro__textContent {
+  flex: 1 1 28.8rem;
+  color: #ffffff;
+}
+.intro__textContentBox {
+  width: min(100%, 43.2rem);
+  margin: 0 auto;
+}
+.intro__lead {
+  font-size: 2rem;
+}
+.intro__foot {
+  height: 22.5rem;
+  background: url(./assets/flame01.jpg) no-repeat 50% 50%/cover scroll;
+}
+
+/**
+ * Products
+ */
+.products {
+  background-color: #fff9ce;
+}
+.products__items {
+  position: relative;
+  top: -6.75rem;
+  z-index: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+}
+.products__item {
+  flex: 0 0 33.33%;
+  padding: 0.75rem;
+}
+.products__item img {
+  border-radius: 6px;
+  box-shadow: 0 0 12px 4px rgba(250, 129, 19, 0.15);
 }
