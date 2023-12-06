@@ -1,14 +1,47 @@
-/**
+/*
  * Contact
  */
 
 .contact {
+  padding: 3rem 0;
+
+  #lpTop & {
+    padding: 3rem 0 8.25rem;
+  }
+
   &__inner {
-    @extend %__inner;
+    width: min(100%, 63rem);
+    margin: auto;
+    padding: 0 clamp(0.75rem, 2%, 1.5rem);
   }
 
   &__heading {
     width: min(100%, 54rem);
     margin: 0 auto;
+  }
+
+  &__form {
+    @include form();
+  }
+
+  &__formTable {
+    @include table();
+  }
+
+  p {
+    width: min(100%, 48rem);
+    margin: 1.5rem auto;
+  }
+
+  &__buttons {
+    text-align: center;
+  }
+
+  [type="submit"] {
+    @include button($primary);
+  }
+
+  [type="button"], [type="reset"] {
+    @include button($primaryLight);
   }
 }
