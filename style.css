@@ -125,7 +125,12 @@ button, input, select, textarea {
  */
 .mainVisual {
   width: min(100%, 63rem);
-  margin: 2.25rem auto;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .mainVisual {
+    margin: 2.25rem auto;
+  }
 }
 
 /**
