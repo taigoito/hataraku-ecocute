@@ -181,6 +181,71 @@
     }
   }
 
+  &__sub {
+    padding: 3rem;
+    background-color: #fcf59a;
+  }
+
+  &__subInner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4%;
+    font-size: min(2.4vw, 1rem);
+    text-align: center;
+  }
+
+  &__spec {
+    margin-bottom: 1.5rem;
+
+    &.--spec_1, &.--spec_4 {
+      flex: 1 1 96%;
+
+      th, td {
+        width: 25%;
+        text-align: center;
+      }
+    }
+    
+    &.--spec_2, &.--spec_3 {
+      flex: 1 1 48%;
+
+      th, td {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__subHeading {
+    font-size: min(3.6vw, 1.5rem);
+  }
+
+  &__specTable {
+    width: 100%;
+
+    thead {
+      height: min(7.2vw, 3rem);
+      background-color: #fee0cc;
+    }
+
+    tbody {
+      height: min(21.6vw, 9rem);
+      background-color: $bodyBg;
+    }
+
+    th, td {
+      &:not(:first-child) {
+        border-left: 2px solid #fcb180;
+      }
+    }
+
+    td > img {
+      width: 80%;
+    }
+  }
+
   &__foot {
     position: relative;
     z-index: 0;

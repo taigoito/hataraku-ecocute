@@ -387,6 +387,56 @@ button, input, select, textarea {
   font-size: 1.33em;
   text-align: right;
 }
+.product__sub {
+  padding: 3rem;
+  background-color: #fcf59a;
+}
+.product__subInner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4%;
+  font-size: min(2.4vw, 1rem);
+  text-align: center;
+}
+.product__spec {
+  margin-bottom: 1.5rem;
+}
+.product__spec.--spec_1, .product__spec.--spec_4 {
+  flex: 1 1 96%;
+}
+.product__spec.--spec_1 th, .product__spec.--spec_1 td, .product__spec.--spec_4 th, .product__spec.--spec_4 td {
+  width: 25%;
+  text-align: center;
+}
+.product__spec.--spec_2, .product__spec.--spec_3 {
+  flex: 1 1 48%;
+}
+.product__spec.--spec_2 th, .product__spec.--spec_2 td, .product__spec.--spec_3 th, .product__spec.--spec_3 td {
+  width: 50%;
+  text-align: center;
+}
+.product__subHeading {
+  font-size: min(3.6vw, 1.5rem);
+}
+.product__specTable {
+  width: 100%;
+}
+.product__specTable thead {
+  height: min(7.2vw, 3rem);
+  background-color: #fee0cc;
+}
+.product__specTable tbody {
+  height: min(21.6vw, 9rem);
+  background-color: #ffffff;
+}
+.product__specTable th:not(:first-child), .product__specTable td:not(:first-child) {
+  border-left: 2px solid #fcb180;
+}
+.product__specTable td > img {
+  width: 80%;
+}
 .product__foot {
   position: relative;
   z-index: 0;
