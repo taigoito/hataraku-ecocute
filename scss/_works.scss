@@ -97,8 +97,11 @@ $worksBgHeight:  min(36vw, 19.44rem); // 54rem * 0.36
     }
 
     span {
+      display: inline-block;
       color: $primary;
-      font-size: 2em;
+      font-weight: 900;
+      font-size: 2.5em;
+      transform: scaleY(1.2);
     }
 
     @media (min-width: $breakpointSm) {
