@@ -335,7 +335,7 @@ button, input, select, textarea {
   font-weight: 700;
   line-height: 1.2;
 }
-.product__unitprice > span {
+.product__unitprice > span:first-child {
   display: inline-block;
   width: 7.5rem;
   margin-right: 0.75rem;
@@ -441,6 +441,13 @@ button, input, select, textarea {
 }
 .product__specTable td > img {
   width: 80%;
+}
+.product__specTable td > span {
+  display: block;
+  height: 2.88rem;
+  margin-bottom: 0.75rem;
+  font-size: min(1.92vw, 1rem);
+  line-height: 1.44;
 }
 .product__foot {
   position: relative;

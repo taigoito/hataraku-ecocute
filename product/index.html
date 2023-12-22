@@ -33,37 +33,35 @@
       </div>
     </header>
     <main class="main">
-      <section class="product">
+      <section id="product" class="product">
         <div class="product__head"></div>
         <div class="product__body">
           <div class="product__container">
             <ul class="product__breadcrumb">
               <li class="product__breadcrumbItem"><a href="/">TOP</a></li>
               <li class="product__breadcrumbItem"><a href="/ecocute/">エコキュート</a></li>
-              <li class="product__breadcrumbItem">三菱 SRT-N184D</li>
+              <li class="product__breadcrumbItem" v-html="product.title"></li>
             </ul>
             <div class="product__main">
               <div class="product__image">
                 <img src="../assets/sampleProductImage.png">
               </div>
               <div class="product__content">
-                <h2 class="product__name">三菱 SRT-N184D</h2>
-                <p class="product__lead">給湯専用 1～3人向けエコキュート</p>
-                <p class="product__description">
-                  テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                </p>
+                <h2 class="product__name" v-html="product.title"></h2>
+                <p class="product__lead" v-html="product.lead"></p>
+                <p class="product__description">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
                 <div class="product__info">
                   <div class="product__off">
                     <span>本体価格<br>より</span>
-                    <span>30</span>
+                    <span v-html="product.discount"></span>
                     <span>%<br>OFF</span>
                   </div>
                   <div class="product__prices">
                     <div class="product__unitprice">
-                      <span>商品代金</span>000,000円(税込)
+                      <span>商品代金</span><span v-html="product.salePrice"></span>円(税抜)
                     </div>
                     <div class="product__unitprice">
-                      <span>工事費</span>000,000円(税込)
+                      <span>工事費</span><span v-html="product.commission"></span>円(税抜)
                     </div>
                   </div>
                 </div>
@@ -72,8 +70,8 @@
                     <img src="../assets/labelGoodPrice.png">
                   </div>
                   <div class="product__amountPrice">
-                    <span>29</span><span>.80</span><span><span>万円</span><br>(税抜)</span>
-                    <div>327,800円(税込)</div>
+                    <span v-html="product.totalPrice1"></span><span v-html="product.totalPrice2"></span><span><span>万円</span><br>(税抜)</span>
+                    <div><span v-html="product.totalPriceWithTax"></span>円(税込)</div>
                   </div>
                 </div>
               </div>
@@ -94,14 +92,13 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td><img src="../assets/value_best.png"><br><span>※</span></td>
-                        <td><img src="../assets/value_best.png"><br><span>自動</span></td>
-                        <td><img src="../assets/value_best.png"><br><span>自動</span></td>
-                        <td><img src="../assets/value_best.png"><br><span>あり</span></td>
+                        <td><img :src="product.spec1"><br><span v-html="product.note1"></span></td>
+                        <td><img :src="product.spec2"><br><span v-html="product.note2"></span></td>
+                        <td><img :src="product.spec3"><br><span v-html="product.note3"></span></td>
+                        <td><img :src="product.spec4"><br><span v-html="product.note4"></span></td>
                       </tr>
                     </tbody>
                   </table>
-                  <p>※ボタンでお湯はり自動でストップ</p>
                 </div>
                 <div class="product__spec --spec_2">
                   <h3 class="product__subHeading">お風呂を快適に
@@ -115,8 +112,8 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td><img src="../assets/value_none.png"></td>
-                        <td><img src="../assets/value_better.png"><br><span>210Kpa</span></td>
+                        <td><img :src="product.spec5"><br><span v-html="product.note5"></span></td>
+                        <td><img :src="product.spec6"><br><span v-html="product.note6"></span></td>
                       </tr>
                     </tbody>
                   </table>
@@ -133,29 +130,8 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td><img src="../assets/value_none.png"></td>
-                        <td><img src="../assets/value_none.png"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="product__spec --spec_4">
-                  <h3 class="product__subHeading">商品の機能</h3>
-                  <table class="product__specTable">
-                    <thead>
-                      <tr>
-                        <th>テキスト</th>
-                        <th>テキスト</th>
-                        <th>テキスト</th>
-                        <th>テキスト</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><img src="../assets/value_best.png"><br><span>テキスト</span></td>
-                        <td><img src="../assets/value_best.png"><br><span>テキスト</span></td>
-                        <td><img src="../assets/value_best.png"><br><span>テキスト</span></td>
-                        <td><img src="../assets/value_best.png"><br><span>テキスト</span></td>
+                        <td><img :src="product.spec7"><br><span v-html="product.note7"></span></td>
+                        <td><img :src="product.spec8"><br><span v-html="product.note8"></span></td>
                       </tr>
                     </tbody>
                   </table>
@@ -224,6 +200,8 @@
         <small>&copy; HATARAKU</small>
       </div>
     </footer>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../init.js"></script>
   </body>
 </html>

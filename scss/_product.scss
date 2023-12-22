@@ -113,7 +113,7 @@
     font-weight: 700;
     line-height: 1.2;
 
-    & > span {
+    & > span:first-child {
       display: inline-block;
       width: 7.5rem;
       margin-right: 0.75rem;
@@ -241,8 +241,18 @@
       }
     }
 
-    td > img {
-      width: 80%;
+    td {
+      &> img {
+        width: 80%;
+      }
+
+      &> span {
+        display: block;
+        height: 2.88rem;
+        margin-bottom: 0.75rem;
+        font-size: min(1.92vw, 1rem);
+        line-height: 1.44;
+      }
     }
   }
 
@@ -252,6 +262,5 @@
     height: 18.5vw;
     background: url(./assets/flame02.jpg) no-repeat 50% 50% / cover scroll;
   }
-
 
 }

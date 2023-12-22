@@ -83,33 +83,8 @@
       </section>
       <section id="products" class="products">
         <ul class="products__items">
-          <li class="products__item">
-            <a href="./product/">
-              <img src="./assets/sampleProduct.jpg">
-            </a>
-          </li>
-          <li class="products__item">
-            <a href="./product/">
-              <img src="./assets/sampleProduct.jpg">
-            </a>
-          </li>
-          <li class="products__item">
-            <a href="./product/">
-              <img src="./assets/sampleProduct.jpg">
-            </a>
-          </li>
-          <li class="products__item">
-            <a href="./product/">
-              <img src="./assets/sampleProduct.jpg">
-            </a>
-          </li>
-          <li class="products__item">
-            <a href="./product/">
-              <img src="./assets/sampleProduct.jpg">
-            </a>
-          </li>
-          <li class="products__item">
-            <a href="./product/">
+          <li class="products__item" v-for="(product, i) in products">
+            <a :href="`./product/#${i + 1}`">
               <img src="./assets/sampleProduct.jpg">
             </a>
           </li>
@@ -385,6 +360,8 @@
         <small>&copy; HATARAKU</small>
       </div>
     </footer>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./init.js"></script>
   </body>
 </html>
