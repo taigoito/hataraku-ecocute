@@ -24,10 +24,6 @@ $introBgHeight:  min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
 
   &__container {
     @extend %__inner;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
   }
 
   &__featureIcons {
@@ -35,25 +31,12 @@ $introBgHeight:  min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    flex: 0 1 43.2rem;
-  }
-
-  &__featureIcon {
-    flex: 0 1 33.33%;
-  }
-
-  &__textContent {
-    flex: 1 1 28.8rem;
-    color: $bodyBg;
-  }
-
-  &__textContentBox {
     width: min(100%, 43.2rem);
     margin: 0 auto;
   }
 
-  &__lead {
-    font-size: 2rem;
+  &__featureIcon {
+    flex: 0 1 33.33%;
   }
 
   &__foot {
