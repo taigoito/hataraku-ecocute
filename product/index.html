@@ -49,13 +49,16 @@
               <div class="product__content">
                 <h2 class="product__name" v-html="product.title"></h2>
                 <p class="product__lead" v-html="product.lead"></p>
-                <p class="product__description">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                <p class="product__description" v-html="product.description"></p>
                 <div class="product__info">
-                  <div class="product__off">
+                  <div class="product__discount" v-if="product.price != 0">
                     <span>本体価格<br>より</span>
                     <span v-html="product.discount"></span>
                     <span>%<br>OFF</span>
                   </div>
+                  <div class="product__discount" v-if="product.price == 0">
+                    <span class="product__zubari">ズバリ</span>
+                  </div> 
                   <div class="product__prices">
                     <div class="product__unitprice">
                       <span>商品代金</span><span v-html="product.salePrice"></span>円(税抜)
@@ -80,7 +83,7 @@
               <div class="product__subInner">
                 <div class="product__spec --spec_1">
                   <h3 class="product__subHeading">エコキュートを交換するなら
-                    <br>必ず欲しいイマドキ基本機</h3>
+                    <br>必ず欲しいイマドキ基本機能</h3>
                   <table class="product__specTable">
                     <thead>
                       <tr>

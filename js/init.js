@@ -39,7 +39,8 @@ const data = {
       // 金額表記等データ成形
       products.forEach((product, i) => {
         product.title = `${product.manufacturer} ${product.model}`;
-        if(product.price - 0 && !isNaN(product.price) && 
+        product.rank = product.labelMain == 'パワフル' ? 2 : product.labelMain == 'ベーシック' ? 1 : 0;
+        if (product.price - 0 && !isNaN(product.price) && 
           product.salePrice - 0 && !isNaN(product.salePrice)) {
           product.discount = Math.round((1 - product.salePrice / product.price) * 100);
         } else {

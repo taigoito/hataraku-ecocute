@@ -75,9 +75,55 @@
       <section id="products" class="products">
         <ul class="products__items">
           <li class="products__item" v-for="(product, i) in products">
-            <a :href="`./product/#${i + 1}`">
-              <img src="./assets/sampleProduct.jpg">
-            </a>
+            <div class="products__itemHead">
+              <div class="products__itemLabels" v-if="product.rank == 0">
+                <div class="products__label --standard">給油専用</div>
+                <div class="products__label --number" v-html="product.labelNum"></div>
+                <div class="products__label --capacity" v-html="product.labelCapacity"></div>
+              </div>
+              <div class="products__itemLabels --basic" v-if="product.rank == 1">
+                <div class="products__label --basic"><span>フルオート<br>ベーシック</span>
+                  <div class="products__label --standard">給油</div>
+                  <div class="products__label --standard">追い焚き</div>
+                </div>
+                <div class="products__label --number" v-html="product.labelNum"></div>
+                <div class="products__label --capacity" v-html="product.labelCapacity"></div>
+              </div>
+              <div class="products__itemLabels --powerfull" v-if="product.rank == 2">
+                <div class="products__label --powerfull"><span>フルオート<br>パワフル</span>
+                  <div class="products__label --standard">給油</div>
+                  <div class="products__label --standard">追い焚き</div>
+                  <div class="products__label --standard">パワフル<br>高圧給油</div>
+                </div>
+                <div class="products__label --number" v-html="product.labelNum"></div>
+                <div class="products__label --capacity" v-html="product.labelCapacity"></div>
+              </div>
+              <div class="products__itemImage">
+                <img src="./assets/sampleProductImage.png">
+              </div>
+              <div class="products__itemName" v-html="product.title"></div>
+            </div>
+            <div class="products__itemFoot">
+              <div class="products__expenseItem">
+                <img src="./assets/expenseItem.png">
+              </div>
+              <div class="products__discount" v-if="product.price != 0">
+                <span>本体価格<br>より</span>
+                <span v-html="product.discount"></span>
+                <span>%<br>OFF</span>
+              </div>
+              <div class="products__discount" v-if="product.price == 0">
+                <span class="products__zubari">ズバリ</span>
+              </div> 
+              <div class="products__amountLabel">
+                <img src="./assets/labelGoodPriceSm.png">
+              </div>
+              <div class="products__amountPrice">
+                <span v-html="product.totalPrice1"></span><span v-html="product.totalPrice2"></span><span><span>万円</span><br>(税抜)</span>
+                <div><span v-html="product.totalPriceWithTax"></span>円(税込)</div>
+              </div>
+            </div>
+            <a class="products__view" :href="`./product/#${i + 1}`">この商品を詳しく見る</a>
           </li>
         </ul>
       </section>
