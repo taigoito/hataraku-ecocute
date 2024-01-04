@@ -393,6 +393,7 @@ button, input, select, textarea {
   text-align: right;
 }
 .products__view {
+  position: relative;
   display: block;
   width: 100%;
   height: 2.4em;
@@ -402,6 +403,16 @@ button, input, select, textarea {
   font-weight: 700;
   text-align: center;
   line-height: 2.4em;
+}
+.products__view:hover {
+  opacity: 0.7;
+}
+.products__view::after {
+  content: url("./assets/chevron.png");
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.15em 0.75em;
 }
 
 /**
@@ -1010,7 +1021,10 @@ button, input, select, textarea {
  * Feature
  */
 .feature {
+  position: relative;
+  z-index: -10;
   padding-top: 6.75rem;
+  padding-bottom: 13.5rem;
   background-image: linear-gradient(0deg, transparent calc(100% - 1px), #f0f0f0 calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), #f0f0f0 calc(100% - 1px));
   background-size: 16px 16px;
   background-repeat: repeat;
@@ -1064,12 +1078,29 @@ button, input, select, textarea {
   padding: 3rem 0;
 }
 #lpTop .contact {
-  padding: 3rem 0 8.25rem;
+  margin-top: -13.5rem;
+  padding: 3rem 0 0;
+  background: url("./assets/flame02.png") no-repeat 0 2.5%/contain scroll;
 }
 .contact__inner {
+  position: relative;
+}
+.contact__bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: calc(100% - min(9vw, 10.5rem));
+  background: #fba310;
+}
+.contact__container {
   width: min(100%, 63rem);
   margin: auto;
   padding: 0 clamp(0.75rem, 2%, 1.5rem);
+}
+#lpTop .contact__container {
+  padding-bottom: 9rem;
 }
 .contact__heading {
   width: min(100%, 54rem);
@@ -1128,6 +1159,9 @@ button, input, select, textarea {
 .contact__formTable tr {
   border-bottom: 6px solid #ffffff;
 }
+#lpTop .contact__formTable tr {
+  border-color: #fba310;
+}
 .contact__formTable tr:nth-child(odd) {
   background-color: #d6e5eb;
 }
@@ -1179,7 +1213,7 @@ button, input, select, textarea {
   padding: 0.75rem;
   border: none;
   border-radius: 3px;
-  background-color: #fa8113;
+  background-color: #08186e;
   color: #ffffff;
   text-align: center;
   text-decoration: none;

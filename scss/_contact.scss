@@ -6,13 +6,33 @@
   padding: 3rem 0;
 
   #lpTop & {
-    padding: 3rem 0 8.25rem;
+    margin-top: -13.5rem;
+    padding: 3rem 0 0;
+    background: url("./assets/flame02.png") no-repeat 0 2.5% / contain scroll;
   }
 
   &__inner {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: calc(100% - min(9vw, 10.5rem));
+    background: #fba310;
+  }
+
+  &__container {
     width: min(100%, 63rem);
     margin: auto;
     padding: 0 clamp(0.75rem, 2%, 1.5rem);
+
+    #lpTop & {
+      padding-bottom: 9rem;
+    }
   }
 
   &__heading {
@@ -38,7 +58,7 @@
   }
 
   [type="submit"] {
-    @include button($primary);
+    @include button(#08186e);
   }
 
   [type="button"], [type="reset"] {
