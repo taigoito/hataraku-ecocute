@@ -59,8 +59,7 @@
   }
 
   &__content {
-    flex: 1 1 36rem;
-    padding: 1.5rem;
+    flex: 0 1 36rem;
   }
 
   &__name {
@@ -242,7 +241,7 @@
     }
 
     tbody {
-      height: min(21.6vw, 9rem);
+      height: min(18vw, 7.5rem);
       background-color: $bodyBg;
     }
 
@@ -259,8 +258,8 @@
 
       &> span {
         display: block;
-        height: 2.88rem;
-        margin-bottom: 0.75rem;
+        height: 2.88em;
+        //margin-bottom: 0.75rem;
         font-size: min(1.92vw, 1rem);
         line-height: 1.44;
       }
