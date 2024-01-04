@@ -9,7 +9,7 @@ $worksBgHeight:  min(36vw, 19.44rem); // 54rem * 0.36
 
   &__head {
     height: $worksBgHeight;
-    background: url(./assets/flame00.png) no-repeat 50% 50% / cover scroll;
+    background: url(./assets/images/flame00.png) no-repeat 50% 50% / cover scroll;
   }
 
   &__heading {
@@ -137,6 +137,6 @@ $worksBgHeight:  min(36vw, 19.44rem); // 54rem * 0.36
     z-index: 1;
     height: $worksBgHeight;
     margin-bottom: -6.75rem;
-    background: url(./assets/flame01.png) no-repeat 50% 50% / cover scroll;
+    background: url(./assets/images/flame01.png) no-repeat 50% 50% / cover scroll;
   }
 }

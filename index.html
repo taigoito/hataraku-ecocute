@@ -16,7 +16,7 @@
       <div class="header__inner">
         <h1 class="header__siteBrand">
           <a href="/">
-            <img src="./assets/logo_hataraku.jpg">
+            <img src="./assets/images/logo_hataraku.jpg">
           </a>
         </h1>
         <nav class="header__nav">
@@ -27,45 +27,45 @@
             <li class="header__primaryMenuItem"><a href="#contact">お問い合わせ</a></li>
           </ul>
           <a class="header__tel" href="tel:0120-31-0502">
-            <img src="./assets/tel_hataraku.jpg">
+            <img src="./assets/images/tel_hataraku.jpg">
           </a>
         </nav>
       </div>
     </header>
     <main class="main">
       <div class="mainVisual">
-        <img src="./assets/main.jpg">
+        <img src="./assets/images/main.jpg">
       </div>
       <div class="floatingArea">
         <ul class="floatingArea__banners">
-          <li class="floatingArea__banner"><a href="#"><img src="./assets/headBanner00.jpg"></a></li>
-          <li class="floatingArea__banner"><a href="#"><img src="./assets/headBanner01.jpg"></a></li>
-          <li class="floatingArea__banner"><a href="#"><img src="./assets/headBanner02.jpg"></a></li>
+          <li class="floatingArea__banner"><a href="#"><img src="./assets/images/headBanner00.jpg"></a></li>
+          <li class="floatingArea__banner"><a href="#"><img src="./assets/images/headBanner01.jpg"></a></li>
+          <li class="floatingArea__banner"><a href="#"><img src="./assets/images/headBanner02.jpg"></a></li>
         </ul>
       </div>
       <section class="intro">
         <div class="intro__head">
           <h2 class="intro__heading">
-            <img src="./assets/heading00.png">
+            <img src="./assets/images/heading00.png">
           </h2>
         </div>
         <div class="intro__body">
           <div class="intro__container">
             <div class="intro__featureIcons">
               <figure class="intro__featureIcon">
-                <img src="./assets/featureIcon00.png">
+                <img src="./assets/images/featureIcon00.png">
               </figure>
               <figure class="intro__featureIcon">
-                <img src="./assets/featureIcon01.png">
+                <img src="./assets/images/featureIcon01.png">
               </figure>
               <figure class="intro__featureIcon">
-                <img src="./assets/featureIcon02.png">
+                <img src="./assets/images/featureIcon02.png">
               </figure>
               <figure class="intro__featureIcon">
-                <img src="./assets/featureIcon03.png">
+                <img src="./assets/images/featureIcon03.png">
               </figure>
               <figure class="intro__featureIcon">
-                <img src="./assets/featureIcon04.png">
+                <img src="./assets/images/featureIcon04.png">
               </figure>
             </div>
           </div>
@@ -99,13 +99,13 @@
                 <div class="products__label --capacity" v-html="product.labelCapacity"></div>
               </div>
               <div class="products__itemImage">
-                <img src="./assets/sampleProductImage.png">
+                <img :src="`./assets/products/${product.imageUrl}`">
               </div>
               <div class="products__itemName" v-html="product.title"></div>
             </div>
             <div class="products__itemFoot">
               <div class="products__expenseItem">
-                <img src="./assets/expenseItem.png">
+                <img src="./assets/images/expenseItem.png">
               </div>
               <div class="products__discount" v-if="product.price != 0">
                 <span>本体価格<br>より</span>
@@ -116,7 +116,7 @@
                 <span class="products__zubari">ズバリ</span>
               </div> 
               <div class="products__amountLabel">
-                <img src="./assets/labelGoodPriceSm.png">
+                <img src="./assets/images/labelGoodPriceSm.png">
               </div>
               <div class="products__amountPrice">
                 <span v-html="product.totalPrice1"></span><span v-html="product.totalPrice2"></span><span><span>万円</span><br>(税抜)</span>
@@ -130,7 +130,7 @@
       <section id="works" class="works">
         <div class="works__head">
           <h2 class="works__heading">
-            <img src="./assets/heading01.png">
+            <img src="./assets/images/heading01.png">
           </h2>
         </div>
         <div class="works__body">
@@ -139,23 +139,23 @@
               <div class="slider__item">
                 <div class="works__item">
                   <h3 class="works__title">
-                    <img class="works__label" src="./assets/labelCase01.png">
+                    <img class="works__label" src="./assets/images/labelCase01.png">
                     <br>エコキュートからエコキュートへの取替
                   </h3>
                   <div class="works__images">
                     <div class="works__before">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case01_before.jpg">
+                        <img src="./assets/images/case01_before.jpg">
                       </figure>
                     </div>
                     <figure class="works__chevron">
-                      <img src="./assets/chevronRightW.png">
+                      <img src="./assets/images/chevronRightW.png">
                     </figure>
                     <div class="works__after">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case01_after.jpg">
+                        <img src="./assets/images/case01_after.jpg">
                       </figure>
                     </div>
                   </div>
@@ -182,23 +182,23 @@
               <div class="slider__item">
                 <div class="works__item">
                   <h3 class="works__title">
-                    <img class="works__label" src="./assets/labelCase02.png">
+                    <img class="works__label" src="./assets/images/labelCase02.png">
                     <br>電気温水器からエコキュートへの取替
                   </h3>
                   <div class="works__images">
                     <div class="works__before">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case02_before.jpg">
+                        <img src="./assets/images/case02_before.jpg">
                       </figure>
                     </div>
                     <figure class="works__chevron">
-                      <img src="./assets/chevronRightW.png">
+                      <img src="./assets/images/chevronRightW.png">
                     </figure>
                     <div class="works__after">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case02_after.jpg">
+                        <img src="./assets/images/case02_after.jpg">
                       </figure>
                     </div>
                   </div>
@@ -225,23 +225,23 @@
               <div class="slider__item">
                 <div class="works__item">
                   <h3 class="works__title">
-                    <img class="works__label" src="./assets/labelCase03.png">
+                    <img class="works__label" src="./assets/images/labelCase03.png">
                     <br>石油給湯器からエコキュートへの取替
                   </h3>
                   <div class="works__images">
                     <div class="works__before">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case03_before.jpg">
+                        <img src="./assets/images/case03_before.jpg">
                       </figure>
                     </div>
                     <figure class="works__chevron">
-                      <img src="./assets/chevronRightW.png">
+                      <img src="./assets/images/chevronRightW.png">
                     </figure>
                     <div class="works__after">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case03_after.jpg">
+                        <img src="./assets/images/case03_after.jpg">
                       </figure>
                     </div>
                   </div>
@@ -268,23 +268,23 @@
               <div class="slider__item">
                 <div class="works__item">
                   <h3 class="works__title">
-                    <img class="works__label" src="./assets/labelCase04.png">
+                    <img class="works__label" src="./assets/images/labelCase04.png">
                     <br>エコキュートからエコキュートへの取替
                   </h3>
                   <div class="works__images">
                     <div class="works__before">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case04_before.jpg">
+                        <img src="./assets/images/case04_before.jpg">
                       </figure>
                     </div>
                     <figure class="works__chevron">
-                      <img src="./assets/chevronRightW.png">
+                      <img src="./assets/images/chevronRightW.png">
                     </figure>
                     <div class="works__after">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case04_after.jpg">
+                        <img src="./assets/images/case04_after.jpg">
                       </figure>
                     </div>
                   </div>
@@ -311,23 +311,23 @@
               <div class="slider__item">
                 <div class="works__item">
                   <h3 class="works__title">
-                    <img class="works__label" src="./assets/labelCase05.png">
+                    <img class="works__label" src="./assets/images/labelCase05.png">
                     <br>エコキュートからエコキュートへの取替
                   </h3>
                   <div class="works__images">
                     <div class="works__before">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case05_before.jpg">
+                        <img src="./assets/images/case05_before.jpg">
                       </figure>
                     </div>
                     <figure class="works__chevron">
-                      <img src="./assets/chevronRightW.png">
+                      <img src="./assets/images/chevronRightW.png">
                     </figure>
                     <div class="works__after">
                       <h5>施工前</h5>
                       <figure>
-                        <img src="./assets/case05_after.jpg">
+                        <img src="./assets/images/case05_after.jpg">
                       </figure>
                     </div>
                   </div>
@@ -359,16 +359,16 @@
       <section id="feature" class="feature">
         <div class="feature__inner">
           <h2 class="feature__heading">
-            <img src="./assets/heading02.png">
+            <img src="./assets/images/heading02.png">
           </h2>
           <div class="feature__contents">
             <div class="feature__content">
               <div class="feature__contentInner">
                 <figure class="feature__contentLabel">
-                  <img src="./assets/labelReason01.png">
+                  <img src="./assets/images/labelReason01.png">
                 </figure>
                 <h3 class="feature__contentHeadline">
-                  <img src="./assets/featureHead00.png">
+                  <img src="./assets/images/featureHead00.png">
                 </h3>
                 <p class="feature__contentText">
                   エコキュートを交換する時、業者様によっては、お見積り提出後に値段が変わることがあります。はた楽では、自社専属のスタッフがお取り付けいたしますので、お見積り提出後に値段が変わることはありません。安心してお任せください！
@@ -378,10 +378,10 @@
             <div class="feature__content">
               <div class="feature__contentInner">
                 <figure class="feature__contentLabel">
-                  <img src="./assets/labelReason02.png">
+                  <img src="./assets/images/labelReason02.png">
                 </figure>
                 <h3 class="feature__contentHeadline">
-                  <img src="./assets/featureHead01.png">
+                  <img src="./assets/images/featureHead01.png">
                 </h3>
                 <p class="feature__contentText">
                   エコキュートを取り付けできる業者は、意外と遠方から来ていることも少なくありません。はた楽では、創業より55年、福井市に根付いて設備工事を行ってきました。そのため、設置後に「お湯の出がおかしい」と不調が現れても、すぐに飛んで行って責任をもって対応いたします！
@@ -391,10 +391,10 @@
             <div class="feature__content">
               <div class="feature__contentInner">
                 <figure class="feature__contentLabel">
-                  <img src="./assets/labelReason03.png">
+                  <img src="./assets/images/labelReason03.png">
                 </figure>
                 <h3 class="feature__contentHeadline">
-                  <img src="./assets/featureHead02.png">
+                  <img src="./assets/images/featureHead02.png">
                 </h3>
                 <p class="feature__contentText">
                   はた楽が取り扱うエコキュートは、メーカーの正規品と決めています。安心して長く使っていただきたいから。創業55年の実績で、エコキュートを安く仕入れたり、施工できたりすることができるようになり、メーカー正規品でも、いつでも極安価格を実現できます！
@@ -404,10 +404,10 @@
             <div class="feature__content">
               <div class="feature__contentInner">
                 <figure class="feature__contentLabel">
-                  <img src="./assets/labelReason04.png">
+                  <img src="./assets/images/labelReason04.png">
                 </figure>
                 <h3 class="feature__contentHeadline">
-                  <img src="./assets/featureHead03.png">
+                  <img src="./assets/images/featureHead03.png">
                 </h3>
                 <p class="feature__contentText">
                   はた楽では、エコキュートを交換する時、必ず自社で施工することを決めています。なぜなら、外注の職人さんに依頼するよりも安く、しかも高品質で施工できるからです。その分お客様に還元できると考えているからです。エコキュートを検討されている方は、自社施工の業者様を視野に入れていただくと満足のいくリフォームができますよ！
@@ -417,10 +417,10 @@
             <div class="feature__content">
               <div class="feature__contentInner">
                 <figure class="feature__contentLabel">
-                  <img src="./assets/labelReason05.png">
+                  <img src="./assets/images/labelReason05.png">
                 </figure>
                 <h3 class="feature__contentHeadline">
-                  <img src="./assets/featureHead04.png">
+                  <img src="./assets/images/featureHead04.png">
                 </h3>
                 <p class="feature__contentText">
                   はた楽では、施工後の安心を最も重要視しています。福井市の皆様にずっと安心をお届けしたいから。だから、弊社では独自の工事保証を設けています。やりっぱなしは絶対にしない、地域の安心できる業者として、施工後の不調があればすぐに飛んでいきます！
@@ -430,10 +430,10 @@
             <div class="feature__content">
               <div class="feature__contentInner">
                 <figure class="feature__contentLabel">
-                  <img src="./assets/labelReason06.png">
+                  <img src="./assets/images/labelReason06.png">
                 </figure>
                 <h3 class="feature__contentHeadline">
-                  <img src="./assets/featureHead05.png">
+                  <img src="./assets/images/featureHead05.png">
                 </h3>
                 <p class="feature__contentText">
                   はた楽のエコキュートは、商品保証も充実！最大10年間の商品延長保証を用意しています！55年の実績で保証料も格安でご用意できるようになりました！保証をご検討の方は一度はた楽にご相談ください！
@@ -447,7 +447,7 @@
         <div class="contact__inner">
           <div class="contact__container">
             <h2 class="contact__heading">
-              <img src="./assets/heading03.png">
+              <img src="./assets/images/heading03.png">
             </h2>
             <form class="contact__form" method="post" action="./php/mail.php">
               <table class="contact__formTable">
@@ -490,7 +490,7 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__siteBrand">
-          <img src="./assets/logo_hataraku.jpg">
+          <img src="./assets/images/logo_hataraku.jpg">
           <br>〒910-0028 福井県福井市学園3丁目2-17
         </div>
         <div class="footer__content">
@@ -500,7 +500,7 @@
             <br>ご来店予約&無料お見積りも受付中です。</p>
         </div>
         <div class="footer__tel">
-          <img src="./assets/tel_hataraku.jpg">
+          <img src="./assets/images/tel_hataraku.jpg">
         </div>
       </div>
       <div class="footer__copyright">

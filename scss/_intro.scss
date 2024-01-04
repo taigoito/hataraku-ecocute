@@ -10,7 +10,7 @@ $introBgHeight:  min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
   &__head {
     height: $introBgHeight;
     padding-top: 6.75rem;
-    background: url(./assets/flame00.jpg) no-repeat 50% 50% / cover scroll;
+    background: url(./assets/images/flame00.jpg) no-repeat 50% 50% / cover scroll;
   }
 
   &__heading {
@@ -41,6 +41,6 @@ $introBgHeight:  min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
 
   &__foot {
     height: $introBgHeight;
-    background: url(./assets/flame01.jpg) no-repeat 50% 50% / cover scroll;
+    background: url(./assets/images/flame01.jpg) no-repeat 50% 50% / cover scroll;
   }
 }

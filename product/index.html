@@ -16,7 +16,7 @@
       <div class="header__inner">
         <h1 class="header__siteBrand">
           <a href="/">
-            <img src="../assets/logo_hataraku.jpg">
+            <img src="../assets/images/logo_hataraku.jpg">
           </a>
         </h1>
         <nav class="header__nav">
@@ -27,7 +27,7 @@
             <li class="header__primaryMenuItem"><a href="../#contact">お問い合わせ</a></li>
           </ul>
           <a class="header__tel" href="tel:0120-31-0502">
-            <img src="../assets/tel_hataraku.jpg">
+            <img src="../assets/images/tel_hataraku.jpg">
           </a>
         </nav>
       </div>
@@ -44,7 +44,7 @@
             </ul>
             <div class="product__main">
               <div class="product__image">
-                <img src="../assets/sampleProductImage.png">
+                <img :src="`../assets/products/${product.imageUrl}`">
               </div>
               <div class="product__content">
                 <h2 class="product__name" v-html="product.title"></h2>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="product__amount">
                   <div class="product__amountLabel">
-                    <img src="../assets/labelGoodPrice.png">
+                    <img src="../assets/images/labelGoodPrice.png">
                   </div>
                   <div class="product__amountPrice">
                     <span v-html="product.totalPrice1"></span><span v-html="product.totalPrice2"></span><span><span>万円</span><br>(税抜)</span>
@@ -188,7 +188,7 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__siteBrand">
-          <img src="../assets/logo_hataraku.jpg">
+          <img src="../assets/images/logo_hataraku.jpg">
           <br>〒910-0028 福井県福井市学園3丁目2-17
         </div>
         <div class="footer__content">
@@ -198,7 +198,7 @@
             <br>ご来店予約&無料お見積りも受付中です。</p>
         </div>
         <div class="footer__tel">
-          <img src="../assets/tel_hataraku.jpg">
+          <img src="../assets/images/tel_hataraku.jpg">
         </div>
       </div>
       <div class="footer__copyright">

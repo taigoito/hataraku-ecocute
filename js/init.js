@@ -5,11 +5,11 @@
  */
 
 const pageId = document.body.id;
-let url = './products.csv';
+let url = './assets/products/data.csv';
 
 // #で表示商品を切り替え
 if (pageId != 'lpTop') {
-  url = '../products.csv';
+  url = '../assets/products/data.csv';
   window.addEventListener('hashchange', () => location.reload());
 }
 
@@ -28,9 +28,9 @@ const data = {
         products[i] = {};
         const values = text.split(',');
         for (let j = 1; j < props.length; j++) {
-          if (values[j] == '◎') values[j] = '../assets/value_best.png';
-          if (values[j] == '○' || values[j] == '〇') values[j] = '../assets/value_better.png';
-          if (values[j] == '-') values[j] = '../assets/value_none.png';
+          if (values[j] == '◎') values[j] = '../assets/images/value_best.png';
+          if (values[j] == '○' || values[j] == '〇') values[j] = '../assets/images/value_better.png';
+          if (values[j] == '-') values[j] = '../assets/images/value_none.png';
           if (props[j].slice(0, 4) == 'note') values[j] = values[j].replace(/\s+/g,'<br>');
           products[i][props[j]] = values[j];
         }

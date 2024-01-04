@@ -94,15 +94,17 @@
   }
 
   &__itemImage {
-    padding: 4.5em 1.5em 0;
+    padding: 0;
 
-    @media(min-width: $breakpointSm) {
-      padding: 1.5em 3em 0;
+    img {
+      width: 100%;
+      aspect-ratio: 0.8;
+      object-fit: contain;
     }
   }
 
   &__itemName {
-    margin: 0.5em;
+    margin: -1.5em 0.5em 0.5em;
     font-weight: 700;
     text-align: center;
   }
@@ -125,7 +127,7 @@
     align-items: center;
     flex: 0 1 70%;
     padding: 1.5rem 0;
-    background: url(./assets/priceBg.png) no-repeat 50% 50% / contain scroll;
+    background: url(./assets/images/priceBg.png) no-repeat 50% 50% / contain scroll;
     color: #d62800;
     font-weight: 700;
     font-size: 0.75em;
@@ -236,7 +238,7 @@
     }
 
     &::after {
-      content: url("./assets/chevron.png");
+      content: url("./assets/images/chevron.png");
       position: absolute;
       top: 0;
       right: 0;
