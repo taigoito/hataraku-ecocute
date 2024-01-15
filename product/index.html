@@ -17,7 +17,7 @@
       <div class="header__inner">
         <h1 class="header__siteBrand">
           <a href="/">
-            <img src="../assets/images/logo_hataraku.jpg">
+            <img src="../assets/images/logo_hataraku.jpg" alt="福井市密着のエコキュート専門店|はた楽">
           </a>
         </h1>
         <nav class="header__nav">
@@ -49,7 +49,7 @@
               </div>
               <div class="product__content">
                 <h2 class="product__name" v-html="product.title"></h2>
-                <p class="product__lead" v-html="product.lead"></p>
+                <h3 class="product__lead" v-html="product.lead"></h3>
                 <p class="product__description" v-html="product.description"></p>
                 <div class="product__info">
                   <div class="product__discount" v-if="product.price != 0">
@@ -72,6 +72,7 @@
                 <div class="product__amount">
                   <div class="product__amountLabel">
                     <img src="../assets/images/labelGoodPrice.png">
+                    <br><small>※脚部カバーは別途</small>
                   </div>
                   <div class="product__amountPrice">
                     <span v-html="product.totalPrice1"></span><span v-html="product.totalPrice2"></span><span><span>万円</span><br>(税抜)</span>
@@ -193,9 +194,9 @@
           <br>〒910-0028 福井県福井市学園3丁目2-17
         </div>
         <div class="footer__content">
-          <p>福井県福井市で水まわりのリフォームをお考えの方へ。
-            <br>「はた楽」は信頼度No.1を目指す地域密着型リフォーム専門店です。
-            <br>キッチン・お風呂・トイレ・洗面など、水まわりのリフォームなら「はた楽」にお任せください。
+          <p>福井県福井市でエコキュートをお考えの方へ。
+            <br>「はた楽」は信頼度NO.1を目指す地域密着型リフォーム専門店です。
+            <br>エコキュートなら「はた楽」にお任せください。
             <br>ご来店予約&無料お見積りも受付中です。</p>
         </div>
         <div class="footer__tel">
@@ -203,7 +204,7 @@
         </div>
       </div>
       <div class="footer__copyright">
-        <small>&copy; HATARAKU</small>
+        <small>Copyright &copy; はた楽 All rights reserved.</small>
       </div>
     </footer>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>

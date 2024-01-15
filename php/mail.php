@@ -13,10 +13,10 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) { // PHP5.1.0以上の場合の
 $site_top = "https://hrsn.jp/";
 
 //管理者のメールアドレス ※複数指定する場合は「,」で区切る 例 $to = "aa@aa.aa,bb@bb.bb";
-$to = "info@hrsn.jp";
+$to = "hataraku@hrsn.jp";
 
 //送信元メールアドレス ※設置先サイトと同じドメイン推奨
-$from = "info@hrsn.jp";
+$from = "hataraku@hrsn.jp";
 
 //フォームのメールアドレス入力箇所のname属性の値
 $Email = "Email";
@@ -57,7 +57,7 @@ $thanksPage = "https://hrsn.jp/thanks.html";
 $requireCheck = 1;
 
 // 必須入力項目 (入力フォームで指定したname属性の値をカンマで区切って指定)
-$require = array('お名前','電話番号','Email');
+$require = array('お名前','電話番号');
 
 
 //
@@ -66,7 +66,7 @@ $require = array('お名前','電話番号','Email');
 
 // 差出人に送信内容確認メール（自動返信メール）を送る (送る=1, 送らない=0)
 // 送る場合は、フォーム側のメール入力欄のname属性の値が上記「$Email」で指定した値と同じである必要がある
-$remail = 1;
+$remail = 0;
 
 // 自動返信メールの送信者欄に表示される名前　※会社名など (空でも良い)
 $refrom_name = "";
@@ -80,23 +80,32 @@ $dsp_name = 'お名前';
 // 自動返信メール冒頭
 $remail_text = <<< TEXT
 
-お問い合わせありがとうございました。
-早急にご返信致しますので今しばらくお待ちください。
+この度は、水廻り専門リフォーム、はた楽ホームページより、
+お問い合わせいただき、誠にありがとうございます。
+3営業日以内にご返信させていただきますのでよろしくお願いいたします。
 
-送信内容は以下になります。
+はた楽では小さな質問からお悩みまでなんでもお答えさせていただきます。
+お電話でのご相談も受け付けしておりますのでお気軽に御連絡ください。
+フリーダイヤル
+0120-31-0502まで。
 
 TEXT;
 
 
 // 自動返信メールに署名を表示 (する=1, しない=0) ※管理者宛にも表示される。
-$mailFooterDsp = 0;
+$mailFooterDsp = 1;
 
 // 署名
 $mailSignature = <<< TEXT
 
 ────────────────────────
-水廻り専門リフォーム
-はた楽 0120-31-0502
+水廻り専門リフォーム（エコキュート）
+はた楽
+
+〒910-0028 福井県福井市学園3-2-17
+フリーダイヤル 0120-31-0502
+E-mail:hataraku@hrsn.jp
+URL:https://hrsn.jp
 ────────────────────────
 
 TEXT;
@@ -215,28 +224,30 @@ else if($confirmDsp == 1){
 	<body>
 		<div id="contact" class="contact">
       <div class="contact__inner">
-				<?php if($empty_flag == 1){ ?>
-					<h4>入力にエラーがあります。
-						<br>下記をご確認の上「戻る」ボタンにて修正をお願い致します。</h4>
-					<div style="color:red"><?php echo $errm; ?></div>
-					<div class="contact__buttons">
-						<input type="button" value="前画面に戻る" onClick="history.back()">
-					</div>
-				<?php }else{ ?>
-					<h2 align="center">送信内容の確認</h2>
-					<p>以下の内容で間違いがなければ、「送信する」ボタンを押してください。</p>
-					<form class="contact__form" action="<?php echo h($_SERVER['SCRIPT_NAME']); ?>" method="POST">
-						<table class="contact__formTable">
-							<?php echo confirmOutput($_POST); // 入力内容を表示 ?>
-						</table>
+				<div class="contact__container">
+					<?php if($empty_flag == 1){ ?>
+						<h4>入力にエラーがあります。
+							<br>下記をご確認の上「戻る」ボタンにて修正をお願い致します。</h4>
+						<div style="color:red"><?php echo $errm; ?></div>
 						<div class="contact__buttons">
-							<input type="hidden" name="mail_set" value="confirm_submit">
-							<input type="hidden" name="httpReferer" value="<?php echo h($_SERVER['HTTP_REFERER']);?>">
-							<input type="submit" value="送信する">
 							<input type="button" value="前画面に戻る" onClick="history.back()">
 						</div>
-					</form>
-				<?php } ?>
+					<?php }else{ ?>
+						<h2 align="center">送信内容の確認</h2>
+						<p>以下の内容で間違いがなければ、「送信する」ボタンを押してください。</p>
+						<form class="contact__form" action="<?php echo h($_SERVER['SCRIPT_NAME']); ?>" method="POST">
+							<table class="contact__formTable">
+								<?php echo confirmOutput($_POST); // 入力内容を表示 ?>
+							</table>
+							<div class="contact__buttons">
+								<input type="hidden" name="mail_set" value="confirm_submit">
+								<input type="hidden" name="httpReferer" value="<?php echo h($_SERVER['HTTP_REFERER']);?>">
+								<input type="submit" value="送信する">
+								<input type="button" value="前画面に戻る" onClick="history.back()">
+							</div>
+						</form>
+					<?php } ?>
+				</div>
 			</div>
 		</div>
 	</body>
@@ -266,11 +277,13 @@ if(($jumpPage == 0 && $sendmail == 1) || ($jumpPage == 0 && ($confirmDsp == 0 &&
 		<?php if($empty_flag == 1){ ?>
 			<div id="contact" class="contact">
       	<div class="contact__inner">
-					<h4>入力にエラーがあります。
-						<br>下記をご確認の上「前画面に戻る」ボタンにて修正をお願い致します。</h4>
-					<div style="color:red"><?php echo $errm; ?></div>
-					<div class="contact__buttons">
-						<input type="button" value="前画面に戻る" onClick="history.back()">
+					<div class="contact__container">
+						<h4>入力にエラーがあります。
+							<br>下記をご確認の上「前画面に戻る」ボタンにて修正をお願い致します。</h4>
+						<div style="color:red"><?php echo $errm; ?></div>
+						<div class="contact__buttons">
+							<input type="button" value="前画面に戻る" onClick="history.back()">
+						</div>
 					</div>
 				</div>
 			</div>

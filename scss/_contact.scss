@@ -29,6 +29,7 @@
     width: min(100%, 63rem);
     margin: auto;
     padding: 0 clamp(0.75rem, 2%, 1.5rem);
+    text-align: center;
 
     #lpTop & {
       padding-bottom: 9rem;
@@ -46,6 +47,7 @@
 
   &__formTable {
     @include table();
+    text-align: left;
   }
 
   p {
@@ -62,6 +64,6 @@
   }
 
   [type="button"], [type="reset"] {
-    @include button($primaryLight);
+    @include button($primary);
   }
 }

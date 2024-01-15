@@ -633,6 +633,7 @@ button, input, select, textarea {
 .product__specTable td > span {
   display: block;
   height: 2.88em;
+  font-family: "Noto Sans JP", sans-serif;
   font-size: min(1.92vw, 1rem);
   line-height: 1.44;
 }
@@ -1105,6 +1106,7 @@ button, input, select, textarea {
   width: min(100%, 63rem);
   margin: auto;
   padding: 0 clamp(0.75rem, 2%, 1.5rem);
+  text-align: center;
 }
 #lpTop .contact__container {
   padding-bottom: 9rem;
@@ -1146,6 +1148,7 @@ button, input, select, textarea {
 }
 .contact__formTable {
   width: 100%;
+  text-align: left;
 }
 @media (max-width: 599.9px) {
   .contact__formTable {
@@ -1242,7 +1245,7 @@ button, input, select, textarea {
   padding: 0.75rem;
   border: none;
   border-radius: 3px;
-  background-color: #fff9ce;
+  background-color: #fa8113;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -1297,6 +1300,7 @@ button, input, select, textarea {
 .footer__copyright {
   padding: 0.75rem 0;
   background-color: #ffffff;
+  font-family: "Noto Sans JP", sans-serif;
   text-align: center;
 }
 .footer img {
