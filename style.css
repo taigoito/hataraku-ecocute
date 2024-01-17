@@ -254,7 +254,7 @@ button, input, select, textarea {
   color: #ffffff;
 }
 .products__label.--capacity {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
   color: #fa8113;
   font-size: 1.5em;
 }
