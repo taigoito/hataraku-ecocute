@@ -121,7 +121,7 @@ $hankaku = 0;
 $hankaku_array = array('電話番号');
 
 // -fオプションによるエンベロープFrom (Return-Path) の設定 (する=1, しない=0) ※サーバーによっては稀にこの設定が必須の場合もある
-$use_envelope = 0; // hetemlは必要
+$use_envelope = 1; // hetemlは必要
 
 // 機種依存文字の変換
 // 変換前の文字
