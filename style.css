@@ -1,5 +1,5 @@
 /**
- * Normarize
+ * Normalize
  */
 *,
 *::before,
@@ -208,6 +208,82 @@ button, input, select, textarea {
 }
 .intro__featureIcon {
   flex: 0 1 33.33%;
+}
+.intro__description {
+  width: min(100%, 60rem);
+  margin: 3rem auto 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: repeating-linear-gradient(135deg, #ffff2d, #ffff2d 6px, #ffffff 6px, #ffffff 12px);
+}
+.intro__description p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.intro__content {
+  position: relative;
+  width: min(100%, 54rem);
+  margin: 0 auto;
+  padding: 1.5rem 0 1.5rem 12rem;
+}
+@media (max-width: 599.9px) {
+  .intro__content {
+    padding-top: 4.5rem;
+  }
+}
+.intro__balloon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10.5rem;
+  height: 10.5rem;
+  margin: 0;
+  padding: 1.75rem 0 0;
+  border-radius: 50%;
+  background-color: #d62800;
+  color: #ffffff;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-align: center;
+}
+.intro__balloon::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1rem);
+  right: -2rem;
+  border: 1rem solid transparent;
+  border-left: 1.5rem solid #d62800;
+}
+.intro__balloon strong {
+  font-size: 1.25em;
+}
+@media (max-width: 599.9px) {
+  .intro__balloon {
+    top: 1.5rem;
+  }
+}
+@media (max-width: 599.9px) {
+  .intro__lead {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+  }
+}
+.intro__note {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-align: center;
 }
 .intro__foot {
   height: min(25vw + 6.75rem, 20.25rem);
@@ -435,6 +511,14 @@ button, input, select, textarea {
   top: 0;
   right: 0;
   margin: 0.15em 0.75em;
+}
+.products__note {
+  position: relative;
+  top: -6.75rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #d62800;
+  text-align: center;
 }
 
 /**

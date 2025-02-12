@@ -39,6 +39,88 @@ $introBgHeight:  min(calc(25vw + 6.75rem), calc(13.5rem + 6.75rem));
     flex: 0 1 33.33%;
   }
 
+  &__description {
+    width: min(100%, 60rem);
+    margin: 3rem auto 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background: repeating-linear-gradient(135deg, #ffff2d, #ffff2d 6px, #ffffff 6px, #ffffff 12px);
+
+    p {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: min(100%, 54rem);
+    margin: 0 auto;
+    padding: 1.5rem 0 1.5rem 12rem;
+
+    @media (max-width: $breakpointSm - 0.1) {
+      padding-top: 4.5rem;
+    }
+  }
+
+  &__balloon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10.5rem;
+    height: 10.5rem;
+    margin: 0;
+    padding: 1.75rem 0 0;
+    border-radius: 50%;
+    background-color: #d62800;
+    color: #ffffff;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-align: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1rem);
+      right: -2rem;
+      border: 1rem solid transparent;
+      border-left: 1.5rem solid #d62800;
+    }
+
+    strong {
+      font-size: 1.25em;
+    }
+
+    @media (max-width: $breakpointSm - 0.1) {
+      top: 1.5rem;
+    }
+  }
+
+  &__lead {
+    @media (max-width: $breakpointSm - 0.1) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__note {
+    width: fit-content;
+    margin: 0 auto;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-align: center;
+
+  }
+
   &__foot {
     height: $introBgHeight;
     background: url(./assets/images/flame01.jpg) no-repeat 50% 50% / cover scroll;

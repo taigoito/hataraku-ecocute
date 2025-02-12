@@ -248,4 +248,13 @@
       margin: 0.15em 0.75em;
     }
   }
+
+  &__note {
+    position: relative;
+    top: -6.75rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #d62800;
+    text-align: center;
+  }
 }
