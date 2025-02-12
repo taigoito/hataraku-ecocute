@@ -1,0 +1,19 @@
+/**
+ * YouTube
+ */
+
+.youtube {
+  background-color: $primaryLight;
+
+  @media (min-width: $breakpointLg) {
+    padding: 2.25rem 0 0;
+  }
+
+  iframe {
+    display: block;
+    width: min(100%, 54rem);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+  }
+}

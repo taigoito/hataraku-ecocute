@@ -132,10 +132,24 @@ button, input, select, textarea {
     margin: 2.25rem auto;
   }
 }
-.mainVisual iframe {
-  width: 100%;
+
+/**
+ * YouTube
+ */
+.youtube {
+  background-color: #fff9ce;
+}
+@media (min-width: 1200px) {
+  .youtube {
+    padding: 2.25rem 0 0;
+  }
+}
+.youtube iframe {
+  display: block;
+  width: min(100%, 54rem);
   height: auto;
   aspect-ratio: 16/9;
+  margin: 0 auto;
 }
 
 /**
