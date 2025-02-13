@@ -138,6 +138,16 @@
                 <div><span v-html="product.totalPriceWithTax"></span>円(税込)</div>
               </div>
             </div>
+            <div class="products__hojokinriyoh">
+              <img src="./assets/images/hojokinriyoh.png">
+              <div class="products__hojokinriyohPriceLarge">
+                <span>00</span><span>.00</span><span>万円</span><span>(税抜)</span>
+              </div>
+              <div class="products__hojokinriyohPriceSmall">
+                <span>000,000円</span><span>(税込)</span>
+              </div>
+              <p class="products__hojokinriyohLead">当店は標準工事費コミコミです</p>
+            </div>
             <a class="products__view" :href="`./product/#${i + 1}`">この商品を詳しく見る</a>
           </li>
         </ul>
