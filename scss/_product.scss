@@ -89,29 +89,37 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    flex: 0 1 16.5rem;
-    padding: 1.5rem;
-    background: url(./assets/images/priceBg.png) no-repeat 50% 50% / contain scroll;
+    flex: 1 1 16.5rem;
+    padding: 1.5rem 0;
     color: #d62800;
     font-weight: 700;
+    font-size: 1.75rem;
     line-height: 1.2;
+
+    @media (min-width: $breakpointSm) {
+      font-size: 1.25rem;
+    }
 
     & > span {
       display: block;
 
+      &:nth-child(1) {
+        font-size: 0.85em;
+
+        &.product__zubari {
+          font-weight: 900;
+          font-size: 2.5em;
+          transform: scaleY(1.2);
+        }
+      }
+
       &:nth-child(2) {
         padding: 0 0.375rem 0 0.75rem;
         font-weight: 900;
-        font-size: 2em;
+        font-size: 2.5em;
         transform: scaleY(1.2);
       }
     }
-  }
-
-  &__zubari {
-    font-weight: 900;
-    font-size: 2.5em;
-    transform: scaleY(1.2);
   }
 
   &__prices {
@@ -125,11 +133,13 @@
 
     & > span:first-child {
       display: inline-block;
-      width: 7.5rem;
+      width: 8.25rem;
       margin-right: 0.75rem;
       padding: 0.375rem 0.75rem;
-      border-radius: 6px;
-      background-color: #fee9db;
+      border-radius: 18px;
+      background-color: #d62800;
+      color: #ffffff;
+      font-size: 0.85em;
       text-align: center;
     }
   }
@@ -142,7 +152,7 @@
   }
 
   &__amountLabel {
-    flex: 0 1 18rem;
+    flex: 1 1 18rem;
   }
 
   &__amountPrice {
@@ -188,6 +198,57 @@
       flex: 1 1 100%;
       font-size: 1.33em;
       text-align: right;
+    }
+  }
+
+  &__hojokinriyoh {
+    margin-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    background: linear-gradient(135deg, #f5cc08 0%, #ffffff 36%, #f5dd99 72%, #f5cc08 81%, #ffffff 90%, #f5dd99 100%);
+    font-weight: 700;
+    font-size: 0.65rem;
+    text-align: center;
+
+    @media(min-width: $breakpointSm) {
+      font-size: 0.8em;
+    }
+  }
+
+  &__hojokinriyohPriceLarge {
+    span {
+      &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+        display: inline-block;
+        color: #d62800;
+        font-weight: 900;
+      }
+      
+      &:nth-child(1) {
+        font-size: 5em;
+        transform: scaleY(1.2);
+      }
+      
+      &:nth-child(2) {
+        font-size: 2.5em;
+        transform: scaleY(1.2);
+      }
+      
+      &:nth-child(3) {
+        margin-left: 0.375rem;
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  &__hojokinriyohPriceSmall {
+    font-size: 1.2em;
+  }
+
+  &__hojokinriyohLead {
+    margin: 0;
+    color: #d62800;
+
+    @media(min-width: $breakpointSm) {
+      font-size: 1.5em;
     }
   }
 

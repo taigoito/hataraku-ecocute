@@ -52,7 +52,7 @@
                 <p class="product__description" v-html="product.description"></p>
                 <div class="product__info">
                   <div class="product__discount" v-if="product.price != 0">
-                    <span>本体価格<br>より</span>
+                    <span>本体価格より</span>
                     <span v-html="product.discount"></span>
                     <span>%<br>OFF</span>
                   </div>
@@ -64,19 +64,32 @@
                       <span>商品代金</span><span v-html="product.salePrice"></span>円(税抜)
                     </div>
                     <div class="product__unitprice">
-                      <span>工事費</span><span v-html="product.commission"></span>円(税抜)
+                      <span>標準工事費</span><span v-html="product.commission"></span>円(税抜)
                     </div>
                   </div>
                 </div>
                 <div class="product__amount">
                   <div class="product__amountLabel">
-                    <img src="../assets/images/labelGoodPrice.png">
+                    <picture>
+                      <source srcset="../assets/images/komikomikakakuLong2.png"  media="(min-width: 600px)">
+                      <img src="../assets/images/komikomikakakuLong1.png">
+                    </picture>
                     <br><small>※脚部カバーは別途</small>
                   </div>
                   <div class="product__amountPrice">
                     <span v-html="product.totalPrice1"></span><span v-html="product.totalPrice2"></span><span><span>万円</span><br>(税抜)</span>
                     <div><span v-html="product.totalPriceWithTax"></span>円(税込)</div>
                   </div>
+                </div>
+                <div class="product__hojokinriyoh">
+                  <img src="../assets/images/hojokinriyoh.png">
+                  <div class="product__hojokinriyohPriceLarge">
+                    <span>00</span><span>.00</span><span>万円</span><span>(税抜)</span>
+                  </div>
+                  <div class="product__hojokinriyohPriceSmall">
+                    <span>000,000円</span><span>(税込)</span>
+                  </div>
+                  <p class="product__hojokinriyohLead">当店は標準工事費コミコミです</p>
                 </div>
               </div>
             </div>

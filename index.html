@@ -80,8 +80,11 @@
                 <br>安心して頼める
                 <br>お店を目指して
                 <br>いるから</p>
-              <img class="intro__lead" src="./assets/images/introLead.png">
-              <p class="intro__note">脚部カバーが必要な場合、＋10,000円で対応できます！</p>
+              <picture class="intro__lead">
+                <source srcset="./assets/images/introLead.png"  media="(min-width: 600px)">
+                <img src="./assets/images/introLeadSm.png">
+              </picture>
+              <p class="intro__note">脚部カバーが必要な場合、<br>＋10,000円で対応できます！</p>
             </div>
           </div>
         </div>
@@ -119,20 +122,17 @@
               <h3 class="products__itemName" v-html="product.title"></h3>
             </div>
             <div class="products__itemFoot">
-              <div class="products__expenseItem">
-                <img src="./assets/images/expenseItem.png">
+              <div class="products__komikomikakaku">
+                <img src="./assets/images/komikomikakaku.png">
               </div>
               <div class="products__discount" v-if="product.price != 0">
-                <span>本体価格<br>より</span>
+                <span>本体価格より</span>
                 <span v-html="product.discount"></span>
                 <span>%<br>OFF</span>
               </div>
               <div class="products__discount" v-if="product.price == 0">
                 <span class="products__zubari">ズバリ</span>
               </div> 
-              <div class="products__amountLabel">
-                <img src="./assets/images/labelGoodPriceSm.png">
-              </div>
               <div class="products__amountPrice">
                 <span v-html="product.totalPrice1"></span><span v-html="product.totalPrice2"></span><span><span>万円</span><br>(税抜)</span>
                 <div><span v-html="product.totalPriceWithTax"></span>円(税込)</div>

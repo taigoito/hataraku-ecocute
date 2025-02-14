@@ -54,11 +54,13 @@
     line-height: 1;
 
     &.--standard {
+      border-radius: 18px;
       background-color: $primary;
       color: #ffffff;
     }
 
     &.--number {
+      border-radius: 18px;
       background-color: #08186e;
       color: #ffffff;
     }
@@ -70,7 +72,7 @@
     }
 
     &.--basic {
-      background-color: #addfb1;
+      background-color: #4db34a;
       color: #198b3b;
 
       span {
@@ -82,7 +84,7 @@
     }
 
     &.--powerfull  {
-      background-color: #addff0;
+      background-color: #00afd1;
       color: #57629c;
 
       span {
@@ -105,37 +107,37 @@
   }
 
   &__itemName {
+    height: 2em;
     margin: -1.5em 0.5em 0.5em;
     font-weight: 700;
     text-align: center;
   }
 
   &__itemFoot {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+    position: relative;
   }
 
-  &__expenseItem {
-    flex: 0 0 30%;
+  &__komikomikakaku {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: clamp(4.5rem, 16vw, 10.5rem);
   }
 
   &__discount {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    flex: 0 1 70%;
-    padding: 1.5rem 0;
-    background: url(./assets/images/priceBg.png) no-repeat 50% 50% / contain scroll;
     color: #d62800;
     font-weight: 700;
     font-size: 0.75em;
-    line-height: 1.2;
+    line-height: 1;
 
     @media(min-width: $breakpointSm) {
-      font-size: 1.15em;
+      padding: 0.75em 0;
+      font-size: 1em;
     }
 
     & > span {
@@ -152,23 +154,8 @@
 
   &__zubari {
     font-weight: 900;
-    font-size: 2em;
+    font-size: 1.75em;
     transform: scaleY(1.2);
-  }
-
-  &__amountLabel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3.75rem;
-    margin: 0.75em;
-
-    @media(min-width: $breakpointSm) {
-      position: static;
-      flex: 0 0 30%;
-      width: auto;
-      margin: auto;
-    }
   }
 
   &__amountPrice {
@@ -176,50 +163,50 @@
     flex-flow: row wrap;
     justify-content: flex-end;
     align-items: center;
-    flex: 0 0 100%;
-    margin-top: 1rem;
-    padding-right: 1.5em;
+    padding-top: 1.5em;
     font-weight: 700;
-    font-size: 0.8em;
-    line-height: 1.2;
+    font-size: 0.75em;
+    line-height: 1;
 
     @media(min-width: $breakpointSm) {
-      flex: 0 0 60%;
-      margin-top: 2rem;
+      font-size: 1em;
     }
 
     & > span {
       display: block;
 
       &:nth-child(1) {
-        margin-top: -1rem;
+        margin-top: -0.35em;
         color: $primary;
         font-weight: 900;
-        font-size: 5em;
+        font-size: 4em;
         transform: scaleY(1.2);
       }
       
       &:nth-child(2) {
         color: $primary;
-        margin-right: 0.75rem;
+        margin-right: 0.25em;
         font-weight: 900;
-        font-size: 2.5em;
+        font-size: 2em;
         transform: scaleY(1.2);
       }
 
       &:nth-child(3) {
+        font-size: 0.8em;
+        line-height: 1.2;
         text-align: center;
 
         & > span {
           color: $primary;
-          font-size: 1.33em;
+          font-size: 1.2em;
         }
       }
     }
 
     & > div {
       flex: 1 1 100%;
-      font-size: 1.33em;
+      padding: 0.375rem 0;
+      font-size: 1em;
       text-align: right;
     }
   }
@@ -279,14 +266,19 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 2.4em;
+    height: 4.5em;
     margin-top: 0.5em;
     border-radius: 0.375rem;
     background: linear-gradient(#fa6400 0%, #fa6400 50%, #cd3c00 51%, #cd3c00 100%);
     color: #ffffff;
     font-weight: 700;
     text-align: center;
-    line-height: 2.4em;
+    line-height: 4.5em;
+
+    @media(min-width: $breakpointSm) {
+      height: 2.4em;
+      line-height: 2.4em;
+    }
 
     &:hover {
       opacity: 0.7;
@@ -297,7 +289,11 @@
       position: absolute;
       top: 0;
       right: 0;
-      margin: 0.15em 0.75em;
+      margin: 0.375em 0.75em;
+
+      @media(min-width: $breakpointSm) {
+        margin: 0.2em 0.75em;
+      }
     }
   }
 
@@ -305,8 +301,12 @@
     position: relative;
     top: -6.75rem;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #d62800;
     text-align: center;
+
+    @media(min-width: $breakpointSm) {
+      font-size: 1.5rem;
+    }
   }
 }
