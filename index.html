@@ -116,6 +116,15 @@
                 <div class="products__label --number" v-html="product.labelNum"></div>
                 <div class="products__label --capacity" v-html="product.labelCapacity"></div>
               </div>
+              <div class="products__itemLabels --powerfull" v-if="product.rank == 3">
+                <div class="products__label --powerfull"><span>フルオート<br>ウルトラ</span>
+                  <div class="products__label --standard">給湯</div>
+                  <div class="products__label --standard">追い焚き</div>
+                  <div class="products__label --standard">ウルトラ<br>高圧給湯</div>
+                </div>
+                <div class="products__label --number" v-html="product.labelNum"></div>
+                <div class="products__label --capacity" v-html="product.labelCapacity"></div>
+              </div>
               <div class="products__itemImage">
                 <img :src="`./assets/products/${product.imageUrl}`">
               </div>
@@ -138,20 +147,27 @@
                 <div><span v-html="product.totalPriceWithTax"></span>円(税込)</div>
               </div>
             </div>
-            <div class="products__hojokinriyoh">
+            <div class="products__medamaLabel" v-if="product.recommended">
+              <img class="products__medamaLabelImage" src="./assets/images/medamaItem.png">
+              <p class="products__medamaLabelText">
+                <span>地域最安値</span>
+                <br><span>高圧フルオートなのに最安値!!</span>
+              </p>
+            </div>
+            <div class="products__hojokinriyoh" v-if="hasAssist == true">
               <img src="./assets/images/hojokinriyoh.png">
               <div class="products__hojokinriyohPriceLarge">
-                <span>00</span><span>.00</span><span>万円</span><span>(税抜)</span>
+                <span v-html="product.subsidyAmount1"></span><span v-html="product.subsidyAmount2"></span><span>万円</span><span>(税抜)</span>
               </div>
               <div class="products__hojokinriyohPriceSmall">
-                <span>000,000円</span><span>(税込)</span>
+                <span v-html="product.subsidyAmountWithTax"></span><span>円(税込)</span>
               </div>
               <p class="products__hojokinriyohLead">当店は標準工事費コミコミです</p>
             </div>
             <a class="products__view" :href="`./product/#${i + 1}`">この商品を詳しく見る</a>
           </li>
         </ul>
-        <p class="products__note">補助金は予算額に達し次第、終了となりますので<br>お早めにご検討ください</p>
+        <p class="products__note" v-if="hasAssist == true">補助金は予算額に達し次第、終了となりますので<br>お早めにご検討ください</p>
       </section>
       <section id="works" class="works">
         <div class="works__head">
@@ -535,6 +551,7 @@
     </footer>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./conf.js"></script>
     <script src="./init.js"></script>
   </body>
 </html>
