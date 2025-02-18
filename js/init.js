@@ -5,18 +5,18 @@
  */
 
 const pageId = document.body.id;
-let url = './assets/products/data.csv';
+let url = `./assets/products/${fileName}`;
 
 // #で表示商品を切り替え
 if (pageId != 'lpTop') {
-  url = '../assets/products/data.csv';
+  url = `../assets/products/${fileName}`;
   window.addEventListener('hashchange', () => location.reload());
 }
 
 // Vue
 const data = {
   data() {
-    return { products: {}, product: {} }
+    return { products: {}, product: {}, hasAssist: hasAssist }
   },
   mounted() {
     axios.get(url).then((res) => {
@@ -28,6 +28,8 @@ const data = {
         products[i] = {};
         const values = text.split(',');
         for (let j = 1; j < props.length; j++) {
+          if (props[j] == 'recommended' && (values[j] == '○' || values[j] == '〇')) values[j] = true;
+          else if (props[j] == 'recommended') values[j] = false;
           if (values[j] == '◎') values[j] = '../assets/images/value_best.png';
           if (values[j] == '○' || values[j] == '〇') values[j] = '../assets/images/value_better.png';
           if (values[j] == '-') values[j] = '../assets/images/value_none.png';
@@ -39,21 +41,32 @@ const data = {
       // 金額表記等データ成形
       products.forEach((product, i) => {
         product.title = `${product.manufacturer} ${product.model}`;
-        product.rank = product.labelMain == 'パワフル' ? 2 : product.labelMain == 'ベーシック' ? 1 : 0;
+        product.rank = product.labelMain == 'ウルトラ' ? 3 : product.labelMain == 'パワフル' ? 2 : product.labelMain == 'ベーシック' ? 1 : 0;
         if (product.price - 0 && !isNaN(product.price) && 
           product.salePrice - 0 && !isNaN(product.salePrice)) {
-          product.discount = Math.round((1 - product.salePrice / product.price) * 100);
+          if (hasAssist) {
+            product.discount = Math.round((1 - (product.salePrice - product.assist) / product.price) * 100);
+          } else {
+            product.discount = Math.round((1 - product.salePrice / product.price) * 100);
+          }
         } else {
           product.discount = '?';
         }
         product.totalPrice = (product.salePrice - 0) + (product.commission - 0);
-        const str = (product.totalPrice + '')
+        let str = (product.totalPrice + '')
         product.totalPrice1 = str.slice(0, -4);
         product.totalPrice2 = `.${str.substring(str.length - 4, str.length - 2)}`;
         product.totalPriceWithTax = (product.totalPrice * 1.1).toLocaleString();
+        product.subsidyAmount = (product.salePrice - 0) + (product.commission - 0) - (product.assist - 0);
+        str = (product.subsidyAmount + '')
+        product.subsidyAmount1 = str.slice(0, -4);
+        product.subsidyAmount2 = `.${str.substring(str.length - 4, str.length - 2)}`;
+        product.subsidyAmountWithTax = (product.subsidyAmount * 1.1).toLocaleString();
         product.salePrice = (product.salePrice - 0).toLocaleString();
         product.commission = (product.commission - 0).toLocaleString();
       });
+
+      console.log(products);
 
       // トップ/サブで出力切り替え
       if (pageId == 'lpTop') {
