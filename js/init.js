@@ -41,7 +41,7 @@ const data = {
       // 金額表記等データ成形
       products.forEach((product, i) => {
         product.title = `${product.manufacturer} ${product.model}`;
-        product.rank = product.labelMain == 'ウルトラ' ? 3 : product.labelMain == 'パワフル' ? 2 : product.labelMain == 'ベーシック' ? 1 : 0;
+        product.rank = product.labelMain == 'ウルトラ' ? 1 : product.labelMain == 'パワフル' ? 2 : product.labelMain == 'ベーシック' ? 1 : 0;
         if (product.price - 0 && !isNaN(product.price) && 
           product.salePrice - 0 && !isNaN(product.salePrice)) {
           if (hasAssist) {
